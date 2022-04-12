@@ -1,0 +1,12 @@
+.icons:hover{
+    background-color: #cfa144;
+}
+.link{
+    color: #FFF
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
