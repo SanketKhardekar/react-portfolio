@@ -1,11 +1,11 @@
 import "./App.css";
 import { Fragment } from "react";
-import PersonalInfo from "./components/PersonalInfo";
-import AboutMe from "./components/AboutMe";
+import PersonalInfo from "./components/Home/PersonalInfo";
+import AboutMe from "./components/About/AboutMe";
 import { Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Portfolio from "./components/Portfolio";
-import ContactMe from "./components/ContactMe";
+import Sidebar from "./components/UI/Sidebar";
+import Portfolio from "./components/Portfolio/Portfolio";
+import ContactMe from "./components/ContactMe/ContactMe";
 function App() {
   return (
     <Fragment>
