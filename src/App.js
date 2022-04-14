@@ -9,8 +9,8 @@ import ContactMe from "./components/ContactMe/ContactMe";
 function App() {
   return (
     <Fragment>
-      <Sidebar />
       <div className="main-container">
+        <Sidebar />
         <Routes>
           <Route path="/" element={<PersonalInfo />} />
           <Route path="/about" element={<AboutMe />} />

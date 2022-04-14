@@ -1,12 +1,8 @@
-.icons:hover{
-    background-color: #cfa144;
-}
-.link{
-    color: #FFF
-}
 .sidebar{
+    height: 80%;
+    width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content:center;
     align-items: center;
-}
+}   

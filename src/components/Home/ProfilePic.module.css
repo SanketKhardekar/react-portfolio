@@ -1,5 +1,6 @@
 .imageConatiner{
-    width: 70vh;
-    height: 70vh;
-    border-radius: 30px;
+    margin: 100px;
+    height:auto;
+    width:auto;
+    border-radius: 30%;
 }

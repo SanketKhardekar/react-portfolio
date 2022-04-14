@@ -1,55 +1,48 @@
-import { Avatar } from "@mui/material";
 import React from "react";
 import styles from "./Sidebar.module.css";
-import { Link } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
-import PersonIcon from "@mui/icons-material/Person";
-import WorkIcon from "@mui/icons-material/Work";
-import DraftsIcon from "@mui/icons-material/Drafts";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import SidebarIcon from "./SidebarIcon";
+const IconsList = [
+  {
+    id:1,
+    title: "HOME",
+    to: "/",
+    icon: "fa-solid fa-house-chimney",
+  },
+  {
+    id:2,
+    title: "ABOUT",
+    to: "/about",
+    icon: "fa-solid fa-user",
+  },
+  {
+    id:3,
+    title: "PORTFOLIO",
+    to: "/portfolio",
+    icon: "fa-solid fa-briefcase",
+  },
+  {
+    id:4,
+    title: "CONTACT",
+    to: "/contact",
+    icon: "fa-solid fa-envelope",
+  },
+];
 const Sidebar = (props) => {
-
   let location = useLocation();
-  let pathName=location.pathname;
-  return (
-    <div
-      style={{
-        margin:'20px',
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignContent:"center"
-      }}
-    >
-      <div>
-        <Avatar className={styles.icons} sx={pathName==="/" ? { bgcolor: "#cfa144" } :{ bgcolor: "#2B2A2A" }}>
-          <Link className={styles.link} to="/">
-            <HomeIcon color="white" />
-          </Link>
-        </Avatar>
-      </div>
-      <div>
-        <Avatar className={styles.icons} sx={pathName==="/about" ? { bgcolor: "#cfa144" } :{ bgcolor: "#2B2A2A" }}>
-          <Link className={styles.link} to="/about">
-            <PersonIcon color="white" />
-          </Link>
-        </Avatar>
-      </div>
-      <div>
-        <Avatar className={styles.icons} sx={pathName==="/portfolio" ? { bgcolor: "#cfa144" } :{ bgcolor: "#2B2A2A" }}>
-          <Link className={styles.link} to="/portfolio">
-            <WorkIcon color="white" />
-          </Link>
-        </Avatar>
-      </div>
-      <div>
-        <Avatar className={styles.icons} sx={pathName==="/contact" ? { bgcolor: "#cfa144" } :{ bgcolor: "#2B2A2A" }}>
-          <Link className={styles.link} to="/contact">
-            <DraftsIcon color="white" />
-          </Link>
-        </Avatar>
-      </div>
-    </div>
-  );
+  let pathName = location.pathname;
+  const iconListComponent = IconsList.map((element) => {
+    let activeLink = pathName === element.to;
+    return (
+      <SidebarIcon
+        key={element.id}
+        title={element.title}
+        active={activeLink}
+        to={element.to}
+        icon={element.icon}
+      />
+    );
+  });
+  return <div className={styles.sidebar}>{iconListComponent}</div>;
 };
 export default Sidebar;
